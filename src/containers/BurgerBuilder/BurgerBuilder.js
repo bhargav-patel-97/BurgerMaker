@@ -75,6 +75,11 @@ class BurgerBuilder extends React.Component {
 
     orderSummary = () => {
         this.setState({ checkout: true });
+        // let burgerDiv = document.querySelector(".Burger__Burger__\\\\");
+        // let buildControlDiv = document.querySelector(".BuildControls__BuildControls__\\\\");
+        // console.log(burgerDiv, buildControlDiv);
+        // burgerDiv.classList.add(styles.Blur);
+        // buildControlDiv.classList.add(styles.Blur);
     }
 
     orderCancelHandler = () => {
