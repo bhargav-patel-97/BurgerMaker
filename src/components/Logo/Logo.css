@@ -10,8 +10,8 @@
     height: 100%;
 }
 
-@media(max-width: 525px) {
+/* @media(max-width: 525px) {
     .Logo {
         display: none !important;
     }
-}
+} */
