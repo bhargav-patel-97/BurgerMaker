@@ -87,7 +87,7 @@ class BurgerBuilder extends React.Component {
     }
 
     orderContinueHandler = () => {
-        alert('Continue with eating!');
+        alert('Be concious while ordering! No one\'s ever getting a burger from here!');
     }
 
     render() {
