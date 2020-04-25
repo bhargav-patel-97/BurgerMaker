@@ -22,16 +22,16 @@ class BurgerIngredient extends React.Component  {
                 );
                 break;
             
-            case ('meat'):
-                ingredient = <div className={styles.Meat}></div>;
+            case ('tikki'):
+                ingredient = <div className={styles.Tikki}></div>;
                 break;        
                 
             case ('cheese'):
                 ingredient = <div className={styles.Cheese}></div>;
                 break;
                 
-            case ('bacon'):
-                ingredient = <div className={styles.Bacon}></div>;
+            case ('onion'):
+                ingredient = <div className={styles.Onion}></div>;
                 break;
 
             case ('salad'):

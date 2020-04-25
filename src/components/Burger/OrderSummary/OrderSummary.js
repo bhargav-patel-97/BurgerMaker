@@ -6,7 +6,7 @@ class OrderSummary extends React.Component{
 
     //For debugging purposes// To improve overall webapp performance
     componentDidUpdate() {
-        console.log('[OrderSummary] DidUpdate');
+        // console.log('[OrderSummary] DidUpdate');
     }
 
     render() {
