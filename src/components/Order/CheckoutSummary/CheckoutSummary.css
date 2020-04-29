@@ -1,8 +1,38 @@
 .CheckoutSummary {
     text-align: center;
-    width: 80%;
+    width: 85%;
     margin: auto;
 }
+
+/*Burger Window Scroll Styling*/
+
+/* width */
+::-webkit-scrollbar {
+    width: 0.5em;
+  }
+  
+  /* height */
+::-webkit-scrollbar {
+    height: 0.5em;
+  }
+
+  /* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+
+  /* Handle */
+::-webkit-scrollbar-thumb {
+    background: rgba(112, 59, 9, 0.589);
+  }
+
+  /* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(112, 59, 9, 0.78);
+  }
+  
+  /*END Burger Window Scroll Styling*/
+
 
 @media(min-width: 700px) {
     .CheckoutSummary {
