@@ -1,7 +1,6 @@
 {
   "name": "burgermaker",
   "version": "0.1.0",
-  "private": true,
   "homepage": "https://bhargav-patel-97.github.io/BurgerMaker",
   "dependencies": {
     "@babel/core": "7.9.0",
