@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/BurgerMaker/static/css/main.0e3c0d0b.chunk.css",
+    "main.css": "/BurgerMaker/static/css/main.c532cba1.chunk.css",
     "main.js": "/BurgerMaker/static/js/main.1a989926.chunk.js",
     "main.js.map": "/BurgerMaker/static/js/main.1a989926.chunk.js.map",
     "runtime-main.js": "/BurgerMaker/static/js/runtime-main.6a3c8b93.js",
@@ -8,15 +8,15 @@
     "static/js/2.5132831a.chunk.js": "/BurgerMaker/static/js/2.5132831a.chunk.js",
     "static/js/2.5132831a.chunk.js.map": "/BurgerMaker/static/js/2.5132831a.chunk.js.map",
     "index.html": "/BurgerMaker/index.html",
-    "precache-manifest.4f498b8a997bd250e761d682acd069a3.js": "/BurgerMaker/precache-manifest.4f498b8a997bd250e761d682acd069a3.js",
+    "precache-manifest.3d188f2cd8bf527e0a0f4b49b801c79a.js": "/BurgerMaker/precache-manifest.3d188f2cd8bf527e0a0f4b49b801c79a.js",
     "service-worker.js": "/BurgerMaker/service-worker.js",
-    "static/css/main.0e3c0d0b.chunk.css.map": "/BurgerMaker/static/css/main.0e3c0d0b.chunk.css.map",
+    "static/css/main.c532cba1.chunk.css.map": "/BurgerMaker/static/css/main.c532cba1.chunk.css.map",
     "static/js/2.5132831a.chunk.js.LICENSE.txt": "/BurgerMaker/static/js/2.5132831a.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.6a3c8b93.js",
     "static/js/2.5132831a.chunk.js",
-    "static/css/main.0e3c0d0b.chunk.css",
+    "static/css/main.c532cba1.chunk.css",
     "static/js/main.1a989926.chunk.js"
   ]
 }
