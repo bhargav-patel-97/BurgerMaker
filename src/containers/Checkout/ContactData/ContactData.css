@@ -6,6 +6,7 @@
     border: 1px solid #eee;
     padding: 10px;
     box-sizing: border-box;
+    text-align: -webkit-center;
 }
 
 .Input {
@@ -15,6 +16,11 @@
     border-radius: 0.7em;
 }
 
+.SubmitBtn {
+    display: block !important;
+    margin: 0 auto !important;
+    padding-top: 1em;
+}
 
 @media (min-width: 700px) {
     .ContactData {
