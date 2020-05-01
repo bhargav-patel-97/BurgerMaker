@@ -1,0 +1,20 @@
+.Order {
+    width: 100%;
+    border: 1px solid #eee;
+    box-shadow: 0 2px 3px #ccc;
+    padding: 10px;
+    margin: 10px auto;
+    box-sizing: border-box;
+}
+
+.IngredientBox {
+    text-transform: capitalize;
+    font-weight: 400;
+    display: inline-block;
+    border-radius: 1.1em;
+    font-size: 0.95em;
+    margin: 0 0.5em;
+    color: #fff;
+    background-color: #E18716;
+    padding: 0.5em;
+}

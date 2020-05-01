@@ -1,12 +1,42 @@
 .Burger {
     width: 100%;
     margin: auto;
-    height: 250px;
+    height: 350px;
     overflow: scroll;
     text-align: center;
     font-weight: 600;
     font-size: 1.2rem;
 }
+
+
+/*Burger Window Scroll Styling*/
+
+/* width */
+::-webkit-scrollbar {
+    width: 0.5em;
+  }
+  
+  /* height */
+::-webkit-scrollbar {
+    height: 0.5em;
+  }
+
+  /* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+
+  /* Handle */
+::-webkit-scrollbar-thumb {
+    background: rgba(112, 59, 9, 0.589);
+  }
+
+  /* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(112, 59, 9, 0.78);
+  }
+  
+  /*END Burger Window Scroll Styling*/
 
 @media (min-width: 500px) and (min-height: 401px) {
     .Burger {
