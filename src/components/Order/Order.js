@@ -19,6 +19,7 @@ const Order = (props) => {
  
     return(
         <div className={styles.Order}>
+            <p>Name: <strong>{props.customerDetails.name}</strong></p><p>Payment: <strong>{props.customerDetails.payment}</strong></p>
             <p>Ingredients: {ingredientOutput}</p>
             <p>Price: <strong>${props.price}</strong></p>
         </div>

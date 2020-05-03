@@ -9,19 +9,6 @@
     text-align: -webkit-center;
 }
 
-.Input {
-    display: block;
-    margin: 0 auto;
-    margin-bottom: 1em;
-    border-radius: 0.7em;
-}
-
-.SubmitBtn {
-    display: block !important;
-    margin: 0 auto !important;
-    padding-top: 1em;
-}
-
 @media (min-width: 700px) {
     .ContactData {
         width: 500px;

@@ -9,8 +9,10 @@ const burger = (props) => {
     //         .map(e => {
     //             console.log([...Array(props.ingredients[e])])
     //         });
-    
-    let ingredients = Object.keys(props.ingredients)
+    let ingredients = Object.keys(props.ingredients);
+
+    if(ingredients) {
+        ingredients = Object.keys(props.ingredients)
         .map(igName => {
             return [...Array(props.ingredients[igName])].map((_, i) => {
                 return <BurgerIngredient key={igName + i} type={igName} />;
@@ -20,6 +22,8 @@ const burger = (props) => {
             return arr.concat(el)
         }, []);
 
+    }
+    
     if (ingredients.length === 0 ) {
         ingredients = <p>Please Start Adding Ingredients to your Burger!</p>
     }
