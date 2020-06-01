@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Modal from '../../components/UI/Modal/Modal';
 import Aux from '../Auxilary';
 
 const withErrorHandler = (WrappedComponent, axios) => {
-    return class extends React.Component {
+    return class extends Component {
  
-        state ={
+        state = {
             error: null
         }
 
@@ -14,9 +14,9 @@ const withErrorHandler = (WrappedComponent, axios) => {
                 this.setState({ error: null });
                 return req;
             });
-            this.resInterceptor = axios.interceptors.response.use(res => res, error => {
-                console.log(error);
-                this.setState({ error: error });
+            this.resInterceptor = axios.interceptors.response.use(res => res, err => {
+                this.setState({ error: err });
+                // return res;
             });
         }
 

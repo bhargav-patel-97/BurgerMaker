@@ -25,7 +25,7 @@ const input = (props) => {
                 {...props} 
                 value={props.value}>
                 {props.elementConfig.options.map(option => (
-                    <option value={option.value}>{option.displayValue}</option>
+                    <option key={option.value} value={option.value}>{option.displayValue}</option>
                 ))}
             </select>;
             break;
