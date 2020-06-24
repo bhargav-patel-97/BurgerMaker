@@ -14,6 +14,14 @@ const INGREDIENT_PRICES = {
     salad: 0.7
 };
 
+const setIngredients = (state, action) => {
+    return updateObject(state, {
+        ingredients: action.ingredients,
+        totalPrice: 0,
+        error: false
+    })
+};
+
 const reducer = (state = initialState, action ) => {
     switch(action.type) {
         case actionTypes.ADD_INGREDIENT:
@@ -34,14 +42,9 @@ const reducer = (state = initialState, action ) => {
                 },
                 totalPrice: state.totalPrice - INGREDIENT_PRICES[action.ingredientName]
             };
-        case actionTypes.SET_INGREDIENTS:
-            return updateObject(state, {
-                ingredients: action.ingredients,
-                totalPrice: 0,
-                error: false
-            });
-        case actionTypes.FETCH_INGREDIENTS_FAILED:
-            return updateObject(state, {error: true});
+        case actionTypes.SET_INGREDIENTS: return setIngredients(state, action);
+        case actionTypes.FETCH_INGREDIENTS_FAILED: return updateObject(state, {error: true});
+        
         default:
             return state;
     }
