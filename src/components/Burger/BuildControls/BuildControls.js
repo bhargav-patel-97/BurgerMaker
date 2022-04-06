@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './BuildControls.css';
 import BuildControl from './BuildControl/BuildControl';
+import { useFsFlag  } from '@flagship.io/react-sdk';
 
 const controls = [
     { label: 'Tikki', type:'tikki' },
@@ -9,23 +10,40 @@ const controls = [
     { label: 'Salad', type:'salad' },
 ];
 
-const buildControls = (props) => (
-    <div className={styles.BuildControls}>
+
+function BuildControls(props) {
+    const flag = useFsFlag("backgroundColor","green")
+    
+        return (
+            <div className={styles.BuildControls}>
         <p>Current price: <strong>{props.price.toFixed(2)} $</strong></p>
         {controls.map(control => (
-            <BuildControl 
-                key={control.label} 
+            <BuildControl
+                key={control.label}
                 label={control.label}
                 add={() => props.addIngredient(control.type)}
                 remove={() => props.removeIngredient(control.type)}
                 disabled={props.disabled[control.type]}
             />
         ))}
-        <button 
+        <button
             className={styles.OrderButton}
             disabled={!props.orderState}
-            onClick={props.orderSummary}>Order Now</button>
+            onClick={()=>{
+                // Activate campaign 
+                flag.getValue()
+                flag.userExposed().then(()=>{
+                    // Notify success
+                    props.orderSummary()
+        }).catch((e)=>{
+                // Notify error
+                console.log(e);
+        })
+        }}
+      style={{
+        backgroundColor: flag.getValue(),
+      }}>Order Now</button>
     </div>
-);
+)};
 
-export default buildControls;
+export default BuildControls;

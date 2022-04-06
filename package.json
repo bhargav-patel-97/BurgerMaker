@@ -4,6 +4,7 @@
   "homepage": "https://bhargav-patel-97.github.io/BurgerMaker",
   "dependencies": {
     "@babel/core": "7.9.0",
+    "@flagship.io/react-sdk": "^3.0.2",
     "@svgr/webpack": "4.3.3",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",

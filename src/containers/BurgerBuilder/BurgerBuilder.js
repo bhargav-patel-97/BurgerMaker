@@ -62,7 +62,7 @@ class BurgerBuilder extends React.Component {
         if (this.props.ings) {
             burgerApp =  (
                 <Aux>
-                    <Burger ingredients={this.props.ings} />
+                    <Burger ingredients={this.props.ings}/>
                     <BuildControls 
                         addIngredient={this.props.onIngredientAdded} 
                         removeIngredient= {this.props.onIngredientRemoved}
