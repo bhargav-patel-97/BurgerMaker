@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './BuildControls.css';
 import BuildControl from './BuildControl/BuildControl';
-import { useFsFlag  } from '@flagship.io/react-sdk';
+import { useFlagship, HitType  } from '@flagship.io/react-sdk';                            // Importing the Flagship React provider: useFlagship
 
 const controls = [
     { label: 'Tikki', type:'tikki' },
@@ -12,8 +12,33 @@ const controls = [
 
 
 function BuildControls(props) {
-    const flag = useFsFlag("backgroundColor","green")
-    
+    const { getFlag, hit: fsHit } = useFlagship()                                           // Initializing the flag
+    const flag = getFlag("backgroundColor", "")
+    // const flagExists = flag.exists()
+    // const flagMetadata = flag.metadata
+    console.log(flag.value);
+
+    const handleCTAClick = () => {
+        props.orderSummary()                                                               // OrderSummary Modal Function
+        console.log("Order Now CTA Clicked with Order Value: " +props.price);
+
+        flag.userExposed().then(()=>{
+            fsHit.send(                                                                     // Sending Hit to Flagship
+                {
+                    type: HitType.TRANSACTION,
+                    documentLocation: "http://localhost:3000/BurgerMaker/",
+                    transactionId: "#123344",
+                    affiliation: "Revenue Generated",                                       // Secondary KPI
+                    currency: "CAD",
+                    itemCount: 1,
+                    paymentMethod: props.order,
+                    totalRevenue: props.price
+                }
+              )
+    }).catch(()=>{
+            console.log("Sorry, something went wrong :(")                                   // Notify error
+    })
+    }
         return (
             <div className={styles.BuildControls}>
         <p>Current price: <strong>{props.price.toFixed(2)} $</strong></p>
@@ -29,19 +54,9 @@ function BuildControls(props) {
         <button
             className={styles.OrderButton}
             disabled={!props.orderState}
-            onClick={()=>{
-                // Activate campaign 
-                flag.getValue()
-                flag.userExposed().then(()=>{
-                    // Notify success
-                    props.orderSummary()
-        }).catch((e)=>{
-                // Notify error
-                console.log(e);
-        })
-        }}
-      style={{
-        backgroundColor: flag.getValue(),
+            onClick={handleCTAClick}                                                    // Order Now Click Triggers: [ Order Summary Modal & Flagship HIT ] 
+            style={{
+                backgroundColor: flag.getValue(),                                       // Fetching flag value
       }}>Order Now</button>
     </div>
 )};

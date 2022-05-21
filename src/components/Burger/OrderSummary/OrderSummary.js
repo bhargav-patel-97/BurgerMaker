@@ -27,7 +27,7 @@ class OrderSummary extends React.Component{
                     {ingredientSummary}
                 </ul>
                 <p>Your Total: <b>{this.props.price.toFixed(2)}$</b></p>
-                <p>Continue to Checkout >></p>
+                <p>Continue to Checkout</p>
                 <Button btnType="Danger" clicked={this.props.orderCancel}>Cancel</Button>
                 <Button btnType="Success" clicked={this.props.orderContinue}>Continue</Button>
             </Aux>
