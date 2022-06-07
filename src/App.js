@@ -16,9 +16,9 @@ function App () {
             envId="c9u1allrsdfg4lbeo630"
             apiKey="OngEcuPJPtUbCUKlczHNeBKSRWHYOgKUBLJsnAzH"
             visitorData={{
-              // id: "visitor-5"
+               id: null
             }}
-            fetchNow={true}
+            //fetchNow={true}
             enableConsoleLogs={true}
           >
             <Route path="/" exact component={BurgerBuilder} />

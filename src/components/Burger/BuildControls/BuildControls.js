@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './BuildControls.css';
 import BuildControl from './BuildControl/BuildControl';
-import { useFlagship, HitType  } from '@flagship.io/react-sdk';                            // Importing the Flagship React provider: useFlagship
+import { useFlagship, HitType, EventCategory  } from '@flagship.io/react-sdk';                            // Importing the Flagship React provider: useFlagship
 
 const controls = [
     { label: 'Tikki', type:'tikki' },
@@ -14,9 +14,9 @@ const controls = [
 function BuildControls(props) {
     const { getFlag, hit: fsHit } = useFlagship()                                           // Initializing the flag
     const flag = getFlag("backgroundColor", "")
+    console.log(flag);
     // const flagExists = flag.exists()
     // const flagMetadata = flag.metadata
-    console.log(flag.value);
 
     const handleCTAClick = () => {
         props.orderSummary()                                                               // OrderSummary Modal Function
@@ -27,12 +27,18 @@ function BuildControls(props) {
                 {
                     type: HitType.TRANSACTION,
                     documentLocation: "http://localhost:3000/BurgerMaker/",
-                    transactionId: "#123344",
+                    transactionId: "#123345",
                     affiliation: "Revenue Generated",                                       // Secondary KPI
                     currency: "CAD",
                     itemCount: 1,
                     paymentMethod: props.order,
                     totalRevenue: props.price
+                },
+                {
+                    type: HitType.EVENT,
+                    documentLocation: "http://localhost:3000/BurgerMaker/",
+                    category: EventCategory.ACTION_TRACKING,
+                    action: "Order Now Clicks"                                             // Primary KPI
                 }
               )
     }).catch(()=>{
